@@ -3,13 +3,13 @@ let local = require('../local.env.js');
 // Development specific configuration
 // ==================================
 module.exports = {
-     selfURL: 'https://mern-crud21.herokuapp.com/',
+     selfURL: 'http://localhost:5000',
      // Control debug level for modules using visionmedia/debug
      DEBUG: '',
-     port: 8001,
+     port: 5000,
      ip: '0.0.0.0',
      seedDB: true,
      webApp: {
-        url: "https://mern-crud21.herokuapp.com/"
+        url: "http://localhost:80"
      }
 };
