@@ -10,5 +10,5 @@
 // }
 
 module.exports = {
-    baseUrl: 'http://localhost:5000/api/v1/'
+    baseUrl: 'https://backend-crud-mern.herokuapp.com/api/v1/'
 }
