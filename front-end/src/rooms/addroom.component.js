@@ -131,7 +131,7 @@ class AddRoom extends Component {
                                        label="Status"
                                        className={classes.textField}
                                        value={this.props.room.status}
-                                       onChange={this.handleChange('status' || '')}
+                                       onChange={this.handleChange('' || 'status')}
                                        margin="normal"
                                       />
                                    </Grid>
