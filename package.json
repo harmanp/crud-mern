@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "start":"node app.js",
     "dev": "concurrently --kill-others \"heroku local\" \"npm run start --prefix ./front-end\"",
     "postinstall": "npm install --prefix ./front-end && npm run build --prefix ./front-end"
   },
