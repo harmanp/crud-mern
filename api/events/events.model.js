@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Events = new Schema({
+const EventSchema = new Schema({
     eventType: String,
     time: {type: Date, default: Date.now},
     userName: String,
@@ -19,14 +19,13 @@ const Events = new Schema({
         virtuals: true,
         getters: true,
         setters: false
-    },
-    timestamps: true
+    }
+    
 });
 
-VendorSchema.pre('find', function () {
+EventSchema.pre('find', function () {
     this.where({is_active: { $ne: false } });
 });
 
-
   
-  module.exports = mongoose.model('Events', Events);
+  module.exports = mongoose.model('Event', EventSchema);

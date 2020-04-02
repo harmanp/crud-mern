@@ -23,7 +23,7 @@ const ChatSchema = new mongoose.Schema({
     timestamps: true
 });
 
-VendorSchema.pre('find', function () {
+ChatSchema.pre('find', function () {
     this.where({is_active: { $ne: false } });
 });
 
