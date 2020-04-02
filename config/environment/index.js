@@ -1,7 +1,6 @@
 'use strict';
 const path = require('path');
 const _ = require('lodash');
-const local = require('../local.env.js');
 if (!process.env.ROOM_NODE_ENV) {
       console.log("Environment Not Set. Please set VENDOR_NODE_ENV to development | test");
       requiredProcessEnv(ROOM_NODE_ENV);
@@ -40,5 +39,5 @@ let config = {
 // ==============================================
 module.exports = _.merge(
        config,
-       require('./' + process.env.ROOM_NODE_ENV + '.js') || {},
+       require('./production.js') || {},
        require('../local.env.js'));
