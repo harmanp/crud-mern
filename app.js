@@ -11,6 +11,7 @@ const cors = require('cors');
 const errorHandler = require('errorhandler');
 
 const roomRoute = require('./routes')(app);
+const router = require('./api/auths')
 
 //Connect to database
 mongoose.Promise = global.Promise;
@@ -31,11 +32,18 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cors());
+app.use('/api', router)
 app.use('/rooms', roomRoute)
+app.use(express.static(path.join(__dirname, '/dist/admin_crud_mern')));
+app.use('/', express.static(path.join(__dirname, '/dist/admin_crud_mern')));
+app.use('/api/v1/rooms', require('./api/rooms'));
+app.use('/api/v1/events', require('./api/events'));
+app.use('/api/v1/chats', require('./api/chats'));
+
 
 
 // PORT
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
 })
