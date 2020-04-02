@@ -22,6 +22,7 @@ module.exports = function(app) {
   app.use(compression());
   app.use(bodyParser.urlencoded({ extended: false, limit: '50mb' }));
   app.use(bodyParser.json({ limit: '50mb' }));
+  app.use(express.static(path.join(__dirname, "front-end", "build")))
   // app.use(express.static(path.join(__dirname, 'dist')));
   // app.use('/v1/auths', express.static(path.join(__dirname, 'dist')));
 

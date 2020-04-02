@@ -5,7 +5,7 @@
 'use strict';
 
 // Set default node environment to development
-process.env.ROOM_NODE_ENV = process.env.ROOM_NODE_ENV || 'production';
+process.env.PORT = process.env.PORT || 'production';
 
 const express = require('express');
 const config = require('./config/environment');
@@ -30,7 +30,9 @@ require('./routes')(app);
 require('./config/seed');
 
 
-
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "front-end", "build"));
+});
 // Start server
 server.listen(config.port, config.ip, function() {
     console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));

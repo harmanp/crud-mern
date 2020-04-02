@@ -3,25 +3,27 @@ const path = require('path');
 const _ = require('lodash');
 const local = require('../local.env.js');
 
-if (!process.env.ROOM_NODE_ENV) {
+if (!process.env.PORT) {
     console.log("Environment Not Set. Please set ROOM_NODE_ENV to development | test");
-    requiredProcessEnv(ROOM_NODE_ENV);
+    requiredProcessEnv(PORT);
     process.exit(2);
 }
 
-function requiredProcessEnv(name) {
-    if (!process.env[name]) {
-        throw new Error('You must set the ' + name + ' environment variable');
+function requiredProcessEnv(PORT) {
+    if (!process.env[PORT]) {
+        throw new Error('You must set the ' + PORT + ' environment variable');
     }
-    return process.env[name];
+    return process.env[PORT];
 }
 
 // All configurations will extend these options
 // ============================================
 let config = {
-    env: process.env.ROOM_NODE_ENV,
+    env: process.env.PORT,
 
     // Root path of server
+    
+
     root: path.normalize(__dirname + '/../../..'),
 
     // Server port
@@ -47,5 +49,5 @@ let config = {
 // ==============================================
 module.exports = _.merge(
     config,
-    require('./' + process.env.ROOM_NODE_ENV + '.js') || {},
+    require('./' + process.env.PORT + '.js') || {},
     require('../local.env.js'));
