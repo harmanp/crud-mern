@@ -4,7 +4,8 @@
 
 'use strict';
 // Set default node environment to development
-process.env.ROOM_NODE_ENV = process.env.ROOM_NODE_ENV || 'development';
+//process.env.ROOM_NODE_ENV = process.env.ROOM_NODE_ENV || 'development';
+const port = process.env.PORT || 5000;
 
 const express = require('express');
 const config = require('./config/environment');
@@ -23,7 +24,7 @@ require('./config/seed');
 require('./routes')(app);
 
 // Start server
-server.listen(config.port, config.ip, function() {
+server.listen(port, function() {
         console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 // Expose app
