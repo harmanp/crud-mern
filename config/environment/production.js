@@ -10,7 +10,7 @@ module.exports = {
      // Server port
      port: 5000,
      mongo: {
-          uri: local.mongo.uri
+          uri: local.db.URI
      },
      selfURL: 'http://localhost',
      webApp: {
