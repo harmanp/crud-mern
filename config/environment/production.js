@@ -4,11 +4,11 @@ let local = require('../local.env.js');
 // =================================
 module.exports = {
      // Server IP
-     ip: process.env.IP ||undefined,
+     ip: process.env.IP ||5000,
      // Control debug level for modules using visionmedia/debug
      DEBUG: '',
      // Server port
-     port: 8080,
+     port: 5000,
      mongo: {
           uri: local.mongo.uri
      },
