@@ -3,29 +3,52 @@
 */
 
 'use strict';
-// Set default node environment to development
-process.env.ROOM_NODE_ENV = process.env.ROOM_NODE_ENV || 'development';
-
-
 const express = require('express');
-const config = require('./config/environment');
-const mongoose = require('mongoose');
+const morgan = require('morgan');
+const compression = require('compression');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const errorHandler = require('errorhandler');
+
+const roomRoute = require('./routes')(app);
+
 //Connect to database
 mongoose.Promise = global.Promise;
-mongoose.connect(config.db.URI, config.mongo.options);
-mongoose.connection.on('error', function (err) {
-       console.error('MongoDB connection error: ' + err);
-       process.exit(-1);
-});
-const app = express();
-const server = require('http').createServer(app);
-require('./config/express')(app);
-require('./config/seed');
-require('./routes')(app);
+mongoose.connect('mongodb://admin:admin@cluster0-shard-00-00-hyur7.mongodb.net:27017,cluster0-shard-00-01-hyur7.mongodb.net:27017,cluster0-shard-00-02-hyur7.mongodb.net:27017/mern-chat?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority'
+, {
+  useNewUrlParser: true
+}).then(() => {
+  console.log('Database sucessfully connected!')
+},
+  error => {
+    console.log('Could not connect to database : ' + error)
+  }
+)
 
-// Start server
-server.listen(config.port, config.ip, function() {
-        console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(cors());
+app.use('/rooms', roomRoute)
+
+
+// PORT
+const port = process.env.PORT || 4000;
+const server = app.listen(port, () => {
+  console.log('Connected to port ' + port)
+})
+
+// 404 Error
+app.use((req, res, next) => {
+    next(createError(404));
+  });
+
+app.use(function (err, req, res, next) {
+  console.error(err.message);
+  if (!err.statusCode) err.statusCode = 500;
+  res.status(err.statusCode).send(err.message);
 });
 // Expose app
 exports = module.exports = app;
