@@ -5,7 +5,7 @@
 'use strict';
 
 // Set default node environment to development
-process.env.ROOM_NODE_ENV =ROOM_NODE_ENV || 'production';
+process.env.ROOM_NODE_ENV = process.env.ROOM_NODE_ENV || 'production';
 
 const express = require('express');
 const config = require('./config/environment');
