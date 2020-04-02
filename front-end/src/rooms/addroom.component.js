@@ -121,7 +121,7 @@ class AddRoom extends Component {
                                        label="Name"
                                        className={classes.textField}
                                        value={this.props.room.room_name}
-                                       onChange={this.handleChange('room_name')}
+                                       onChange={this.handleChange('room_name' || '')}
                                        margin="normal"
                                       />
                                    </Grid>
