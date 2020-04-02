@@ -5,7 +5,7 @@
 'use strict';
 
 // Set default node environment to development
-process.env.PORT = process.env.PORT || 'production';
+const port = process.env.PORT || 5000;
 
 const express = require('express');
 const config = require('./config/environment');
@@ -30,12 +30,16 @@ require('./routes')(app);
 require('./config/seed');
 
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "front-end", "build"));
-});
+if(process.env.NODE_ENV === 'production') { 
+      console.log("Express is botting up in production");
+      app.use(express.static('front-end/build'))
+      app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'front-end', 'build', 'index.html'));
+      });
+    }
 // Start server
-server.listen(config.port, config.ip, function() {
-    console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
+server.listen(port, config.ip, function() {
+    console.log('Express server listening on %d, in %s mode', port, app.get('env'));
 });
 
 // Expose app

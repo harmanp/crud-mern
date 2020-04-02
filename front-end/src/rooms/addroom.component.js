@@ -65,7 +65,7 @@ class AddRoom extends Component {
         const { dispatch } = this.props;
         let payload={
             room_name: this.props.room.room_name,
-            status: this.props.room.status,
+            status: this.props.room.status
             // phone_number: this.props.room.phone_number,
             // address: this.props.room.address,
         }
@@ -88,6 +88,7 @@ class AddRoom extends Component {
         function SegHeader() {
             if(params.id){
                 return <EditText />;
+                
             }
             return <InsertText />;
         }

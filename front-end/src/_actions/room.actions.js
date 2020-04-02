@@ -25,7 +25,7 @@ function createRoom(payload){
         let apiEndpoint = 'rooms/';
         userService.post(apiEndpoint, payload)
         .then((response)=>{
-            dispatch(createUserInfo());
+            dispatch(createRoomInfo());
             history.push('/room');
         })
     }
@@ -49,7 +49,7 @@ function editRoomInfo(id, payload){
         let apiEndpoint = 'rooms/'+ id;
         userService.put(apiEndpoint, payload)
         .then((response)=>{
-            dispatch(updatedUserInfo());
+            dispatch(updatedRoomInfo());
             history.push('/room');
         })
     }
@@ -59,8 +59,8 @@ function deleteRoomById(id){
         let apiEndpoint = 'rooms/'+ id;
         userService.deleteDetail(apiEndpoint)
         .then((response)=>{
-             dispatch(deleteRoomsDetails());
-             dispatch(roomAction.getRoom());
+            dispatch(deleteRoomsDetails());
+            dispatch(roomAction.getRoom());
         })
     };
 }
@@ -89,14 +89,14 @@ export function editRoomsDetails(room){
         // address: room.address
     }
 }
-export function updatedUserInfo(){
+export function updatedRoomInfo(){
     return{
-        type: "USER_UPDATED"
+        type: "ROOM_UPDATED"
     }
 }
-export function createUserInfo(){
+export function createRoomInfo(){
     return{
-        type: "USER_CREATED_SUCCESSFULLY"
+        type: "ROOM_CREATED_SUCCESSFULLY"
     }
 }
 export function deleteRoomsDetails(){
