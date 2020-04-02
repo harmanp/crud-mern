@@ -1,5 +1,4 @@
 'use strict';
-
 const path = require('path');
 const _ = require('lodash');
 const local = require('../local.env.js');
@@ -40,7 +39,7 @@ let config = {
         }
     },
 
-    selfDomain: "erpfs.com",
+    // selfDomain: "erpfs.com",
     
 };
 
