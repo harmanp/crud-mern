@@ -121,7 +121,7 @@ class Room extends Component {
                                     </TableCell>
                                     <TableCell >{n.createdAt}</TableCell>
                                     <TableCell >{n.updatedAt}</TableCell>
-                                    <TableCell component="th" scope="row">{n.status}</TableCell>
+                                    <TableCell >{n.status}</TableCell>
                                     <TableCell>
                                         <IconButton className={classes.button} aria-label="Edit" component='a' href={`/edit-room/${n._id}`}>
                                            <EditIcon />
