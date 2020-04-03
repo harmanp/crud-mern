@@ -126,11 +126,11 @@ class AddRoom extends Component {
                                       />
                                    </Grid>
                                    <Grid item xs={3}>
-                                      <TextField
+                                   <TextField
                                        id="status"
                                        label="Status"
                                        className={classes.textField}
-                                       value={this.props.room.status}
+                                       value={this.props.room.room_name}
                                        onChange={this.handleChange('status')}
                                        margin="normal"
                                       />
