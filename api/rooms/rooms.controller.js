@@ -44,7 +44,7 @@ res.status(200).json({ message: "room Details fetched Successfully", data : room
        },
        delete: (req, res)=>{
             const roomId = req.params.id;
-            Room.findByIdAndUpdate(roomId)
+            Room.findByIdAndRemove(roomId)
             .exec((err, roomDetails) => {
                  if (err) res.status(500).json({message : err})
                  res.status(200).json({ message: "room Deleted"});
