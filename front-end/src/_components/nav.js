@@ -91,6 +91,12 @@ class Navigation extends React.Component {
                      </ListItemIcon>
                      <ListItemText primary="Chat History"/>
                   </ListItem>
+                  <ListItem button component='a' href="https://full-assignment.herokuapp.com/#/" target="_blank">
+                     <ListItemIcon>
+                        <RoomIcon />
+                     </ListItemIcon>
+                     <ListItemText primary="Previous ChatApp Assignment"/>
+                  </ListItem>
                   <ListItem button onClick={(event)=>{this.logout()}}>
                      <ListItemIcon>
                         <LogoutIcon />

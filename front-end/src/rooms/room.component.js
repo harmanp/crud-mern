@@ -123,10 +123,10 @@ class Room extends Component {
                                     <TableCell >{n.updatedAt}</TableCell>
                                     <TableCell >{n.status}</TableCell>
                                     <TableCell>
-                                        <IconButton className={classes.button} aria-label="Edit" component='a' href={`/edit-room/${n._id}`}>
+                                        <IconButton color="primary" className={classes.button} aria-label="Edit" component='a' href={`/edit-room/${n._id}`}>
                                            <EditIcon />
                                         </IconButton>
-                                        <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                        <IconButton color="secondary" className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
                                            <DeleteIcon /> 
                                         </IconButton>
                                     </TableCell>

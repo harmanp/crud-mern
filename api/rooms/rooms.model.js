@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const RoomSchema = new Schema({
     room_name: String,
-    status: String,
+    chats: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Chat'
+      }],
+    status: String
     // edit_date: { type: Date, default: Date.now },
     // created_date: { type: Date, default: Date.now }
 },
