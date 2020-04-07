@@ -66,8 +66,7 @@ class AddRoom extends Component {
         let payload={
             room_name: this.props.room.room_name,
             status: this.props.room.status
-            // phone_number: this.props.room.phone_number,
-            // address: this.props.room.address,
+            
         }
         if(params.id){
             dispatch(roomAction.editRoomInfo(params.id, payload));
@@ -130,7 +129,7 @@ class AddRoom extends Component {
                                        id="status"
                                        label="Status"
                                        className={classes.textField}
-                                       value={this.props.room.room_name}
+                                       value={this.props.room.status}
                                        onChange={this.handleChange('status')}
                                        margin="normal"
                                       />
