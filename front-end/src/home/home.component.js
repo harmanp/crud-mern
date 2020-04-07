@@ -48,7 +48,8 @@ class Home extends Component {
                  <Nav />
                  <main className={classes.content}>
                      <div className={classes.toolbar} />
-                     <Typography>{'Home'}</Typography>
+                     <Typography>{'Welcome to the home Page'}</Typography>
+                     <Typography>{'Please choose any options on your left to view crud operations'}</Typography>
                  </main>
                </div>
             </div>

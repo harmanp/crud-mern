@@ -3,10 +3,8 @@ const initialState = {
     room: [],
     open: false,
     id: '',
-    name: '',
-    // mobile: '',
-    // phone_number: '',
-    // address: ''
+    room_name: '',
+    status:''
 };
 export function room(state = initialState, action) {
     switch (action.type) {
@@ -19,11 +17,9 @@ export function room(state = initialState, action) {
             return {
                 ...state,
                 id: action.id,
-                name: action.room_name,
+                room_name: action.room_name,
                 status: action.status
-                // mobile: action.mobile,
-                // phone_number: action.phone_number,
-                // address: action.address
+                
             };
         case "USER_UPDATED":
             return state;

@@ -81,7 +81,7 @@ export function editRoomsDetails(room){
     return{
         type: "ROOM_DETAIL",
         id: room._id,
-        name: room.room_name,
+        room_name: room.room_name,
         status: room.status
         
         // mobile: room.mobile,
