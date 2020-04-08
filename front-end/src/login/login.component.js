@@ -95,9 +95,6 @@ class Login extends Component {
                 </Button>
                 </Paper>
                     <Paper className={classes.paper}>
-                        <Typography><h1>{'Login'}</h1></Typography>
-                    </Paper>
-                    <Paper className={classes.paper}>
                         <Typography><h1>{'Admin Login'}</h1></Typography>
                     </Paper>
                     <Paper className={classes.paper}>
