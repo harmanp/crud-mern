@@ -93,6 +93,11 @@ class Login extends Component {
                 <Button variant="contained" color="secondary" href="https://full-assignment.herokuapp.com/#/" target="_blank">
                            Previous assignment Guest chat App
                 </Button>
+                </Paper>
+                <Paper className={classes.paper}>
+                <Button variant="contained" color="secondary" href="https://full-assignment.herokuapp.com/#/" target="_blank">
+                           Previous assignment Guest chat App
+                </Button>
                     </Paper>
                     <Paper className={classes.paper}>
                         <Typography><h1>{'Login'}</h1></Typography>
