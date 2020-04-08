@@ -85,15 +85,18 @@ class Login extends Component {
       const { classes } = this.props;
       return (
         <div className="login-margin">
+            
             <Grid container spacing={24}>
+            
                 <Grid item xs={3}>
+                
                 </Grid>
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                <Button variant="contained" color="secondary" href="https://full-assignment.herokuapp.com/#/" target="_blank">
+                <Button color="secondary" href="https://full-assignment.herokuapp.com/#/" target="_blank">
                            Previous assignment Guest chat App
                 </Button>
-                </Paper>
+                    </Paper>
                     <Paper className={classes.paper}>
                         <Typography><h1>{'Admin Login'}</h1></Typography>
                     </Paper>
