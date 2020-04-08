@@ -1,7 +1,7 @@
 # crud_MERN
 Yu Shi 101053814 Harmanpreet Kaur 101140952
 
-https://backend-crud-mern.herokuapp.com/
+https://mern-crud16.herokuapp.com/
 
-username allen
-password: allenvendor
+username : 'admin',
+password : 'crudadmin'
