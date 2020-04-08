@@ -126,7 +126,7 @@ class Room extends Component {
                                         <IconButton  className={classes.button} color="primary" aria-label="Edit" component='a' href={`/edit-room/${n._id}`}>
                                            <EditIcon />
                                         </IconButton>
-                                        <IconButton color="secondary" color="primary" className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                        <IconButton className={classes.button} color="secondary" aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
                                            <DeleteIcon /> 
                                         </IconButton>
                                     </TableCell>

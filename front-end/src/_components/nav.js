@@ -68,7 +68,7 @@ class Navigation extends React.Component {
             >
                <List component="nav">
                   <ListItem button component='a' href="/home">
-                     <ListItemIcon>
+                     <ListItemIcon color="secondary">
                         <HomeIcon />
                      </ListItemIcon>
                      <ListItemText primary="Home"/>
