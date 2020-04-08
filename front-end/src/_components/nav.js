@@ -67,40 +67,40 @@ class Navigation extends React.Component {
              anchor={anchor}
             >
                <List component="nav">
-                  <ListItem button component='a' color="secondary" href="/home">
+                  <ListItem button component='a' href="/home">
                      <ListItemIcon>
-                        <HomeIcon />
+                        <HomeIcon  color="primary" />
                      </ListItemIcon>
                      <ListItemText primary="Home"/>
                   </ListItem>
-                  <ListItem button component='a' color="secondary" href="/room">
+                  <ListItem button component='a'  href="/room">
                      <ListItemIcon>
-                        <RoomIcon />
+                        <RoomIcon color="primary" />
                      </ListItemIcon>
                      <ListItemText primary="Rooms"/>
                   </ListItem>
-                  <ListItem button component='a' color="secondary" href="/events">
+                  <ListItem button component='a'  href="/events">
                      <ListItemIcon>
-                        <RoomIcon />
+                        <RoomIcon color="primary" />
                      </ListItemIcon>
                      <ListItemText primary="Events History"/>
                   </ListItem>
-                  <ListItem button component='a' color="secondary" href="/chats">
+                  <ListItem button component='a' href="/chats">
                      <ListItemIcon>
-                        <RoomIcon />
+                        <RoomIcon color="primary" />
                      </ListItemIcon>
                      <ListItemText primary="Chat History"/>
                   </ListItem>
 
-                  <ListItem button href="https://full-assignment.herokuapp.com/#/" target="_blank" color="secondary" component='a' >
+                  <ListItem button href="https://full-assignment.herokuapp.com/#/" target="_blank" component='a' >
                      <ListItemIcon>
                         <RoomIcon />
                      </ListItemIcon>
                      <ListItemText primary="Previous ChatApp Assignment"/>
                   </ListItem>
-                  <ListItem button color="secondary" onClick={(event)=>{this.logout()}}>
+                  <ListItem button onClick={(event)=>{this.logout()}}>
                      <ListItemIcon >
-                        <LogoutIcon />
+                        <LogoutIcon color="primary"/>
                      </ListItemIcon>
                      <ListItemText primary="Logout"/>
                   </ListItem>
