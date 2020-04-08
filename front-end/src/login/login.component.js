@@ -93,7 +93,7 @@ class Login extends Component {
                 </Grid>
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                <Button color="secondary" variant="contained" href="https://full-assignment.herokuapp.com/#/" target="_blank">
+                <Button  variant="contained" color="secondary" href="https://full-assignment.herokuapp.com/#/" target="_blank">
                            Previous assignment Guest chat App
                 </Button>
                     </Paper>
