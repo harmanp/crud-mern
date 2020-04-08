@@ -10,5 +10,5 @@
 // }
 
 module.exports = {
-    baseUrl: 'https://https://mern-crud16.herokuapp.com/api/v1/'
+    baseUrl: 'https://mern-crud16.herokuapp.com/api/v1/'
 }
